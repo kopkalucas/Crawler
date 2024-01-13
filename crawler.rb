@@ -6,7 +6,7 @@ require 'openssl'
 puts "Enter a search term"
 search_term = gets.chomp
 
-url = "https://www.amazon.com/iphone/s?k=#{search_term}"
+url = "https://www.amazon.com/s?k=#{search_term}"
 content = open(url, ssl_verify_mode: OpenSSL::SSL::VERIFY_NONE, 'User-Agent' => 'firefox')
 doc = Nokogiri::HTML(content)
 product_names = []
